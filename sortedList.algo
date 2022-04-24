@@ -1,0 +1,19 @@
+
+
+FUNCTION addToArr(orderedArr : ARRAY_OF INTEGER, input: INTEGER) : ARRAY_OF INTEGER
+VAR
+    n:=INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        IF (input >= orderedArr[i]) THEN
+            IF (input < orderedArr[i-1]) THEN
+                WHILE (i<orderedArr.length) DO
+                    orderedArr[i]=i+1; //move items
+                END_WHILE
+                orderedArr[i-1] = input;
+            END_IF
+        END_IF
+    END_FOR
+    RETURN orderedArr ;
+END
+
